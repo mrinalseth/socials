@@ -8,6 +8,9 @@ import axios from 'axios'
 import Experience from './Experience'
 import Education from './Education'
 import styled from 'styled-components'
+import './Dashboard.css'
+
+
 
 function Dashboard()
 { 
@@ -51,35 +54,45 @@ function Dashboard()
         }else{
             if(Object.keys(profile).length>0){
                 dashboardContent = 
-                <Container>
-                    <Content>
-                    <CTA>
+                <div className="dashboard">
+                    <div className="dashboard__header">
                         <p>Welcome 
                             <Link style={{textDecoration: "none"
                             }} to={`/profile/${profile.handle}`}><span style={{
                                 fontSize: "36px"
                             }} >{" "+user.name}</span></Link>
                         </p>
+                    </div>
+                    <div className="dashboard__actions">
                         <ProfileActions/>
+                    </div>
+                    <div className="dashboard__resume">
                         <a target="_blank" href={profile.cv}>Resume</a>
-                        <h3 style={{color:"green", fontSize:"32px"}}>Experience</h3>
-                        <Experience
-                            experience={experience}
-                        />
-                        <Education
-                            education = {education}
-                        />
-                        <div style={{marginBottom: '60px'}}/>
+                    </div>
+                    <div className="dashboard__exp">
+                        <div className="title">Experience</div>
+                        <div className="expCard">
+                            <Experience
+                                experience={experience}
+                            />
+                        </div>
+                    </div>
+                    <div className="dashboard__edu">
+                        <div className="title">Education</div>
+                        <div className="eduCard">
+                            <Education
+                                education = {education}
+                            />
+                        </div>
+                    </div>
+                    <div className="dashboard__delete">
                         <button className="btn-danger" onClick={onDelete}>
                             Delete Account
                         </button>
-                    </CTA>
-                    <BgImage/>
-                    </Content>
-                </Container>
+                    </div>
+                </div>
             }else{
                 dashboardContent = 
-
                 <Container>
                     <Content>
                     <CTA>

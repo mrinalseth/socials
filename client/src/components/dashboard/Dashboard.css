@@ -1,0 +1,56 @@
+.dashboard {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.dashboard__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard__resume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+.dashboard__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.dashboard__exp {
+    margin-top: 25px;
+}
+
+.dashboard__exp > .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.dashboard__edu {
+    margin-top: 25px;
+}
+
+.dashboard__edu > .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    font-size: 24px;
+    font-weight: 500;
+}
