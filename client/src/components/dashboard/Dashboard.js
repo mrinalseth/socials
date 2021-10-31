@@ -10,8 +10,6 @@ import Education from './Education'
 import styled from 'styled-components'
 import './Dashboard.css'
 
-
-
 function Dashboard()
 { 
     let dashboardContent;
@@ -67,6 +65,7 @@ function Dashboard()
                         <ProfileActions/>
                     </div>
                     <div className="dashboard__resume">
+                        <img src="https://bit.ly/3w2xzGm" alt="" />
                         <a target="_blank" href={profile.cv}>Resume</a>
                     </div>
                     <div className="dashboard__exp">

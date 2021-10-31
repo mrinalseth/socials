@@ -28,6 +28,26 @@
     margin-top: 10px;
 }
 
+.dashboard__resume > img {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+}
+
+.dashboard__resume > a {
+    text-decoration: none;
+    color: #1b2411;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.dashboard__resume > a:hover {
+    background-color: rgb(155, 245, 104);
+    border-radius: 10px;
+}
+
+
 .dashboard__actions {
     display: flex;
     justify-content: center;
