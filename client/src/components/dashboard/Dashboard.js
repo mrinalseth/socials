@@ -18,7 +18,6 @@ function Dashboard()
     const dispatch = useDispatch();
     const [id, setId] = useState('')
     const {isAuthenticated, user} = useSelector(state => state.auth)
-
     useEffect(() => {
         dispatch(getCurrentProfile())
     }, [])
@@ -56,12 +55,13 @@ function Dashboard()
                 dashboardContent = 
                 <div className="dashboard">
                     <div className="dashboard__header">
-                        <p>Welcome 
+                        <img src={user.avatar} alt="" />
                             <Link style={{textDecoration: "none"
                             }} to={`/profile/${profile.handle}`}><span style={{
-                                fontSize: "36px"
+                                fontSize: "36px",
+                                color: "#1b2411"
                             }} >{" "+user.name}</span></Link>
-                        </p>
+                        
                     </div>
                     <div className="dashboard__actions">
                         <ProfileActions/>
