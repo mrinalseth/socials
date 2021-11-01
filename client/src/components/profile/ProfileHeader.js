@@ -6,9 +6,14 @@ const ProfileHeader = (props) =>{
     return (
 
       <div className="profile-card">
-  
+   
   <header>
     <img src={props.profile.user.avatar}/>
+
+    <div className="resume">
+      <img src="https://bit.ly/3w2xzGm" alt="" />
+      <a target="_blank" href={props.profile.cv}>Resume</a>
+    </div>
     
     <h1>{props.profile.user.name}</h1>
     

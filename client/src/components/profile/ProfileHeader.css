@@ -83,6 +83,26 @@
       margin-left: -10px;
 }
 
+.profile-card > header > .resume > img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.profile-card > header > .resume > a {
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.profile-card > header > .resume > a:hover {
+    background-color: rgb(155, 245, 104);
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+}
+
 @media (max-width: 900px) and (min-width: 0px) {
     .profile-card {
         width: 560px;
