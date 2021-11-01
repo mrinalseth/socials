@@ -6,16 +6,16 @@ const ProfileCred = (props) =>{
             <div className="col-md-6">
               <h3 className="text-center text-info"><i class="fas fa-briefcase"></i>Experience</h3>
               <ul className="list-group">
-                {props.profile.experience.map((experience) => {
+                {props.profile.experience.map((exp) => {
                     return(
-                        <li key={experience._id} className="list-group-item">
-                            <h4>{experience.company}</h4>
-                            <p>{experience.from}</p>
+                        <li key={exp._id} className="list-group-item">
+                            <h4>{exp.company}</h4>
+                            <p>{exp.from}</p>
                             <p>
-                                <strong>Position:</strong> {experience.title}
+                                <strong>Position:</strong> {exp.title}
                             </p>
                             <p>
-                                <strong>Description: </strong>{experience.description}</p>
+                                <strong>Description: </strong>{exp.description}</p>
                         </li>
                     )
                 })}

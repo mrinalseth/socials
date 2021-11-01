@@ -35,7 +35,7 @@ const Span = styled.span`
   font-weight:500;
   font-size: 20px;
   margin: 30px;
-  padding: 5px;
+  padding: 10px;
   &:hover {
     color: #094001;
     border-radius: 5px;

@@ -1,0 +1,13 @@
+.profile {
+    background-color: #1a1d23;
+    background-repeat:repeat, no-repeat;
+    background-size:auto, 100% 100%;
+    background-attachment: fixed;
+    color: #ecf0f1;
+    font-family: "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+    min-height: 100%;
+    overflow-y: scroll;
+  }

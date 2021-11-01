@@ -7,6 +7,7 @@ import ProfileHeader from './ProfileHeader'
 import Spinner from '../common/spinner'
 import { useDispatch, useSelector } from 'react-redux'
 import {getProfileByHandle} from '../../actions/profileActions'
+import './Profile.css'
 
 const Profile = () => {
 

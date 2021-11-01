@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import './Exp.css'
-
+ 
 const Experience = (props) => {
 
     const handleClick = (id) => {
@@ -10,10 +10,10 @@ const Experience = (props) => {
     }
     const experience = <div className="experience">
         {props.experience.map(exp => {
-        var start = new Date(exp.from).toDateString()
-        var end = ""
+        var start = new Date(exp.from).toLocaleDateString()
+        var end = "Current"
         if(exp.to) {
-            end = new Date(exp.to).toDateString()
+            end = new Date(exp.to).toLocaleDateString()
         }
         return(
             <div class="table-row">		

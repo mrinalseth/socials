@@ -7,10 +7,10 @@ const Experience = (props) => {
         .then(window.location='/dashboard')
     }
     const education = props.education.map(edu => {
-        var start = new Date(edu.from).toDateString()
-        var end = ""
+        var start = new Date(edu.from).toLocaleDateString()
+        var end = "Current"
         if(edu.to) {
-            end = new Date(edu.to).toDateString()
+            end = new Date(edu.to).toLocaleDateString()
         }
         return(
             <div class="table-row">		
