@@ -5,6 +5,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {getProfiles} from '../../actions/profileActions'
 import spinner from '../common/spinner';
 import ProfileItem from './ProfileItem'
+import './Profiles.css'
 
 const Profiles = () => {
     const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const Profiles = () => {
 
 
     let profileItems
+
     if(profiles === null || loading){
         profileItems = <spinner/>
     }else{
@@ -25,20 +27,27 @@ const Profiles = () => {
         }
     }
 
+    // <div className="profiles">
+    //     <div className="cintainer">
+    //         <div className="row">
+    //             <div className="col-md-12">
+    //                 <div className="display-4 text-center">
+    //                     <h1>Developer Profile</h1>
+    //                     <p className="lead text-center">
+    //                         Connect with developers
+    //                     </p>
+    //                     {profileItems}
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
+    // </div>
+
     return(
         <div className="profiles">
-            <div className="cintainer">
-                <div className="row">
-                    <div className="col-md-12">
-                        <div className="display-4 text-center">
-                            <h1>Developer Profile</h1>
-                            <p className="lead text-center">
-                                Connect with developers
-                            </p>
-                            {profileItems}
-                        </div>
-                    </div>
-                </div>
+            <div className="header">Developers Profile</div>
+            <div className="profileCard">
+                {profileItems}
             </div>
         </div>
     )
