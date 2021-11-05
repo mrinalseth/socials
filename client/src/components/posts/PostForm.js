@@ -10,6 +10,7 @@ const PostForm = () => {
 
     const [text, setText] = useState('')
     const [file, setFile] = useState(null)
+    const [uploading, setUploading] = useState(false)
 
     let errors = useSelector(state => state.errors)
     const {user:{name,avatar}} = useSelector(state => state.auth)
@@ -17,6 +18,7 @@ const PostForm = () => {
     const onSubmit = async(e) => {
         e.preventDefault()
         if (file) {
+          setUploading(true)
           const storageRef = storage.ref()
           const fileRef = storageRef.child(file.name)
           await fileRef.put(file)
@@ -68,13 +70,17 @@ const PostForm = () => {
           errors.text = null
         }
 
-
+        setUploading(false)
     }
     const onChange = (e) => {
       setFile(e.target.files[0])
     }
     return (
-        <div style={{margin: "100px"}}>
+        <div>
+          {uploading? <div style={{
+            marginTop: "100px",
+            fontSize: "24px"
+          }}>Please wait</div>:<div style={{margin: "100px"}}>
             <div>
               <div>
                 Say Somthing...
@@ -95,7 +101,8 @@ const PostForm = () => {
                 </form>
               </div>
             </div>
-          </div>
+          </div>}
+        </div>
     )
 }
 
