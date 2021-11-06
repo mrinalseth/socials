@@ -4,7 +4,7 @@ import {addPost} from '../../actions/postActions'
 import {useSelector, useDispatch} from 'react-redux'
 import {getPost} from '../../actions/postActions'
 import storage from '../../firebase'
-
+import './PostForm.css'
 
 const PostForm = () => {
 
@@ -17,6 +17,10 @@ const PostForm = () => {
     const dispatch = useDispatch()
     const onSubmit = async(e) => {
         e.preventDefault()
+        if(errors.text === "") {
+          alert(errors.text)
+          return
+        }
         if (file) {
           setUploading(true)
           const storageRef = storage.ref()
@@ -76,33 +80,31 @@ const PostForm = () => {
       setFile(e.target.files[0])
     }
     return (
-        <div>
-          {uploading? <div style={{
-            marginTop: "100px",
-            fontSize: "24px"
-          }}>Please wait</div>:<div style={{margin: "100px"}}>
-            <div>
-              <div>
-                Say Somthing...
-              </div>
-              <div>
-                <form onSubmit ={onSubmit}>
-                  <div>
-                  <input type="file" onChange={onChange} />
-                    <TextAreaFieldGroup
-                        placeholder="Create a post"
-                        name={text}
-                        value={text}
-                        onChange={(e) => setText(e.target.value)}
-                        errors ={errors.text}
-                    />
-                  </div>
-                  <button type="submit">Submit</button>
-                </form>
-              </div>
-            </div>
-          </div>}
-        </div>
+
+      
+
+      <div className="postForm">
+        {
+          uploading ?
+          <div className ="loading">Uploading Please wait</div>:
+          <form onSubmit={onSubmit}>
+          <div className="top">
+            <img src={avatar} alt="" />
+            <input
+              placeholder="Write something..."
+              name={text}
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              errors ={errors.text}
+            />
+          </div>
+          <div className="bottom">
+            <input type="file" onChange={onChange} />
+            <button className="btn">Post</button>
+          </div>
+        </form>
+        }
+      </div>
     )
 }
 

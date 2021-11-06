@@ -6,6 +6,8 @@ import { Redirect } from 'react-router'
 import {getPost} from '../../actions/postActions'
 import PostFeed from './PostFeed'
 import storage from '../../firebase'
+import './Post.css'
+
 
 const Posts = () => {
     
@@ -31,7 +33,7 @@ const Posts = () => {
     }
 
     return (
-        <div>
+        <div className="post">
             <PostForm/>
             {postContent}
         </div>
