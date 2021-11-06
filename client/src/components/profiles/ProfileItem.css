@@ -1,12 +1,63 @@
-.profileItem {
-    border: 1px solid black;
+.profileContainer {
     padding: 50px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.profileItem > .left > img {
+.profileContainer > .profileCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    margin: 25px;
+    background-color: #ccf7a2;
+    width: 80%;
+}
+
+.profileContainer > .profileCard:hover {
+    background-color: #031d03;
+    color: #ccf7a2;
+    width: 85%;
+    padding: 25px;
+}
+
+.profileContainer > .profileCard > .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileContainer > .profileCard > .left > img {
     width: 100px;
+    padding: 25px;
+    border-radius: 100%;
+}
+
+.profileContainer > .profileCard:hover > .left > img {
+    transform: scale(1.5);
+    margin-right: 25px;
+}
+
+.profileContainer > .profileCard > .left > .details > .name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profileContainer > .profileCard > .left > .details > .handle {
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.profileContainer > .profileCard > .right > .btn > p {
+    background-color: #031d03;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.profileContainer > .profileCard:hover > .right > .btn > p {
+    background-color: #ccf7a2;
+    color: #031d03;
 }
