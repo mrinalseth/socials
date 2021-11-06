@@ -31,10 +31,10 @@ const PostFeed = (props) => {
                 }} alt="" />
             }
             else if(post.mediaType === 'pdf'){
-                mediaData = <a href={post.mediaLink}>Open PDF</a>
+                mediaData = <a target="_blank" href={post.mediaLink}>Open PDF</a>
             }
             else if(post.mediaType === 'word'){
-                mediaData = <a href={post.mediaLink}>Download word file</a>
+                mediaData = <a target="_blank" href={post.mediaLink}>Download word file</a>
             }
             else if(post.mediaType === 'audio'){
                 mediaData = <audio controls src={post.mediaLink}></audio>
