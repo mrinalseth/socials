@@ -1,0 +1,107 @@
+.postFeed {
+    /* border: 1px solid black; */
+    width: 70%;
+}
+
+.postFeed > .postFeedCard {
+    /* border: 1px solid black; */
+    margin-bottom: 25px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+}
+
+.postFeed > .postFeedCard > .header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.postFeed > .postFeedCard > .header > img {
+    width: 40px;
+    border-radius: 100%;
+    margin: 10px;
+}
+.postFeed > .postFeedCard > .header > .details > .name {
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.postFeed > .postFeedCard > .header > .details > .date {
+    font-size: 12px;
+}
+
+.postFeed > .postFeedCard > .text {
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.postFeed > .postFeedCard > .media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    height: fit-content;
+    margin-top: 10px;
+}
+
+.postFeed > .postFeedCard > .media > img {
+    height: 250px;
+    width: 500px;
+}
+
+.postFeed > .postFeedCard > .media > video {
+    width: 100%;
+}
+
+.postFeed > .postFeedCard > .media > a {
+    font-weight: 500;
+    font-size: 24px;
+    color: rgb(40, 88, 218);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.postFeed > .postFeedCard > .media > a > img {
+    width: 25px;
+    margin-right: 2px;
+}
+
+.postFeed > .postFeedCard > .reaction {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.postFeed > .postFeedCard > .reaction > .like {
+    width: 25px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.postFeed > .postFeedCard > .reaction > .unLike {
+    width: 25px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+.postFeed > .postFeedCard > .action > button {
+    background-color: rgb(141, 10, 10);
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    letter-spacing: 2px;
+}
+
+.postFeed > .postFeedCard > .action > button:hover {
+    border: 1px solid red;
+    background-color: white;
+    color: red;
+    font-weight: 600;
+}

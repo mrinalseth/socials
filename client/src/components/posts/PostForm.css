@@ -37,6 +37,7 @@
     border: none;
     width: 100%;
     padding: 10px;
+    font-size: 20px;
 }
 .postForm > form > .top > input::placeholder {
     color: black;
