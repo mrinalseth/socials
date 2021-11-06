@@ -27,22 +27,6 @@ const Profiles = () => {
         }
     }
 
-    // <div className="profiles">
-    //     <div className="cintainer">
-    //         <div className="row">
-    //             <div className="col-md-12">
-    //                 <div className="display-4 text-center">
-    //                     <h1>Developer Profile</h1>
-    //                     <p className="lead text-center">
-    //                         Connect with developers
-    //                     </p>
-    //                     {profileItems}
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-    // </div>
-
     return(
         <div className="profiles">
             <div className="header">Developers Profile</div>
