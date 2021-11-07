@@ -105,5 +105,11 @@ router.get('/',(req,res)=>{
   .catch(err=>{res.status(400).json(err)})
 })
 
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id)
+  .then((user) => {
+    res.json(user)
+  })
+})
 
 module.exports = router;

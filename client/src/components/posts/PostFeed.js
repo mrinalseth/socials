@@ -20,52 +20,6 @@ const PostFeed = (props) => {
             return false
         }
     }
-
-                    {/* <div  key={post._id}>
-                    <div >
-                        <div>
-                        <a href="profile.html">
-                            <img src={post.avatar}
-                            alt="" />
-                        </a>
-                        <br />
-                        <p>{post.name}</p>
-                        </div>
-                        <div>
-                        <p>{post.text}</p>
-                        <p>{mediaData}</p>
-                        <button 
-                            type="button" 
-                            onClick={() => {
-                                dispatch(addLike(post._id))
-                            }} >
-                            +
-                            <i className={classnames('fa fa-thumbs-up',{
-                                'text-info': findUser(post.likes)
-                            })}></i>
-                            <span>{post.likes.length }</span>
-                        </button>
-                        <button 
-                            type="button" 
-                            onClick={() => {
-                                dispatch(removeLike(post._id))
-                            }} >
-                            <i></i>
-                        </button>
-                        {
-                            post.user === id
-                                ?<button 
-                                type="button"
-                                onClick={() => {onDelete(post._id)}}
-                                >
-                                    <i>Delete</i>
-                                </button>
-                                :null
-                        }
-                        </div>
-                    </div>
-        </div> */}
-    
     return (
         <div className="postFeed" >
         {props.posts.map((post) => {
@@ -94,13 +48,13 @@ const PostFeed = (props) => {
             const date = new Date(post.date)
             return(
                 <div className="postFeedCard">
-                    <div className="header">
+                    <iv className="header">
                         <img src={post.avatar} alt="" />
                         <div className="details">
                             <div className="name">{post.name}</div>
                             <div className="date">{date.toDateString()}</div>
                         </div>
-                    </div>
+                    </iv>
                     <div className="text">
                         {post.text}
                     </div>
@@ -119,17 +73,20 @@ const PostFeed = (props) => {
                                 dispatch(removeLike(post._id))
                             }} className="unLike" src="https://bit.ly/3BQykU4" alt="" /> :null
                         }
+                        <button>
+                            <Link to={`/post/${post._id}`} >Comment</Link>
+                        </button>
                     </div>
                     <div className="action">
-                    {
+                        {
                             post.user === id
-                                ?<button 
-                                type="button"
-                                onClick={() => {onDelete(post._id)}}
-                                >
-                                    <i>Delete</i>
-                                </button>
-                                :null
+                            ?<button 
+                            type="button"
+                            onClick={() => {onDelete(post._id)}}
+                            >
+                                <i>Delete</i>
+                            </button>
+                            :null
                         }
                     </div>
                 </div>

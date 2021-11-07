@@ -105,8 +105,8 @@ router.get('/:post_id',(req,res)=>{
         post.comment.push({
             user:req.user.id,
             text:req.body.text,
-            name:req.body.name,
-            avatar:req.body.avatar
+            name:req.user.name,
+            avatar:req.user.avatar
         })
         post.save()
         .then(post=>res.json(post))

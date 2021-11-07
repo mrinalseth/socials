@@ -94,9 +94,17 @@ const PostForm = () => {
               placeholder="Write something..."
               name={text}
               value={text}
-              onChange={(e) => setText(e.target.value)}
+              onChange={(e) => {
+                if(text.length<=300) {
+                  setText(e.target.value)
+                }else{
+                  setText(text.slice(0,300))
+                }
+              }}
               errors ={errors.text}
             />
+            {errors.text}
+            {`${text.length}/300`}
           </div>
           <div className="bottom">
             <input type="file" onChange={onChange} />

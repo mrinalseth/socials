@@ -5,52 +5,63 @@ import {useParams} from 'react-router-dom'
 import Spinner from '../common/spinner'
 import CommentForm from './CommentForm'
 import DisplayComment from './DisplayComment'
+import './Post.css'
 
 const Post = () => {
     const dispatch = useDispatch()
-    const {id} = useParams()
     useEffect(() => {
         dispatch(getSinglePost(id))
-    },[])
-    const {post, loading} = useSelector(state => state.post)
-    let postData;
-    if(post === null || loading){
-        postData = <Spinner/>
+    }, [])
+    const {id} = useParams()
+    const {post, loading} = useSelector(store => store.post)
+    let postContent;
+    if(post === null || loading || Object.keys(post).length === 0){
+        postContent = <Spinner/>
     }else{
-        postData = (
-            <div>
-                <div className="card card-body mb-3">
-                    <div className="row">
-                        <div className="col-md-2">
-                            <a href="profile.html">
-                            <img className="rounded-circle d-none d-md-block" src={post.avatar}
-                                alt="" />
-                            </a>
-                            <br />
-                            <p className="text-center">{post.name}</p>
-                        </div>
-                        <div className="col-md-10">
-                            <p className="lead">{post.text}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <CommentForm post = {post} />
-                <DisplayComment post={post} />
-            </div>
-        )
+        postContent = <DisplayComment comment={post.comment}/>
     }
-
-    return(
-        <div className="post">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-12">
-                        {postData}
-                    </div>
+    let mediaData
+    if(post.mediaType === 'image'){
+        mediaData = <img src={post.mediaLink} alt="" />
+    }
+    else if(post.mediaType === 'pdf'){
+        mediaData = <a style={{textDecoration:"none"}} target="_blank" href={post.mediaLink}>
+            <img src="https://bit.ly/3kectjI" alt="" />
+            Open PDF
+        </a>
+    }
+    else if(post.mediaType === 'word'){
+        mediaData = <a style={{textDecoration:"none"}} target="_blank" href={post.mediaLink}>
+            <img src="https://bit.ly/3bJJAHm" alt="" />
+            Download attached file
+        </a>
+    }
+    else if(post.mediaType === 'audio'){
+        mediaData = <audio controls src={post.mediaLink}></audio>
+    }
+    else if(post.mediaType === 'video'){
+        mediaData = <video controls height="250px" width="500px" src={post.mediaLink}></video>
+    }
+    const date = new Date(post.date)
+    return (
+        <div >
+        <div className="singlePost">
+            <div className="header">
+                <img src={post.avatar} alt="" />
+                <div className="details">
+                        <div className="name">{post.name}</div>
+                        <div className="date">{date.toDateString()}</div>
                 </div>
+            </div>
+            <div className="content">
+                <div className="text">{post.text}</div>
+                {mediaData}
             </div>
         </div>
+            <CommentForm post = {post} />
+            {postContent}
+        </div>
+        
     )
 }
 
