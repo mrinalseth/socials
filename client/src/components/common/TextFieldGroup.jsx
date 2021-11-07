@@ -6,7 +6,7 @@ function TextFieldGroup(props)
 {
     const styles = {
         input: {
-            width: "76%",
+            width: "100%",
             color: 'rgb(38, 50, 56)',
             fontWeight: "700",
             fontSize: "14px",
@@ -18,8 +18,6 @@ function TextFieldGroup(props)
             outline: "none",
             boxSizing: "border-box",
             border: "2px solid rgba(0, 0, 0, 0.02)",
-            // marginBottom: "50px",
-            marginLeft: "46px",
             textAlign: "center",
             marginBottom: "27px",
         },

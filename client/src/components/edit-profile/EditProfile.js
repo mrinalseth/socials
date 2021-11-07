@@ -10,6 +10,7 @@ import {createProfile, getCurrentProfile} from '../../actions/profileActions'
 import axios from 'axios'
 import TextWithIcon from '../common/TextWithIcon'
 import storage from '../../firebase'
+import './EditProfile.css'
 
 const EditProfile = () => {
     const dispatch = useDispatch()
@@ -104,13 +105,7 @@ const EditProfile = () => {
         return(<Redirect to="/login" />)
     }else{
       return(
-        <div className="create-profile">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <a href="dashboard.html" className="btn btn-light">
-                Go Back
-              </a>
+        <div className="editProfile">
               <h1 className="display-4 text-center">Edit Your Profile</h1>
               <small className="d-block pb-3">* = required field</small>
               <form action="add-experience.html" onSubmit={onSubmit}>
@@ -162,15 +157,7 @@ const EditProfile = () => {
                   value = {skills}
                   onChange = {(e)=>{setSkills(e.target.value)}}
                 />
-                <TextFieldGroup
-                  type = "text"
-                  errors = {errors.github}
-                  placeholder = "Github username"
-                  name = "github"
-                  value = {github}
-                  onChange = {(e)=>{setgithub(e.target.value)}}
-                />
-                <small className="form-text text-muted">If you want your latest repos and a Github link, include your username</small>
+                
                 <TextAreaFieldGroup
                   errors = {errors.name}
                   placeholder = "A short bio of yourself"
@@ -225,14 +212,10 @@ const EditProfile = () => {
                   onChange={(e) => setInstagram(e.target.value)}
                 />
                 <input 
-                    type="submit" 
-                    className="btn btn-info btn-block mt-4"
-                     />
+                    type="submit"
+                />
                 <input type="file" onChange={onchange} required />
               </form>
-            </div>
-          </div>
-        </div>
       </div>
     )
     }
