@@ -50,8 +50,10 @@ function Login(){
       fontSize: "23px",
     },
     form1: {
-      paddingTop: "40px",
-      marginRight: "10%"
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
     },
     submit: {
       borderRadius: "5em",
@@ -62,9 +64,10 @@ function Login(){
         paddingRight: "40px",
         paddingBottom: "10px",
         paddingTop: "10px",
-        marginLeft: "35%",
+        marginLeft: "20%",
         fontSize: "18px",
-        marginRight: "20%"
+        marginRight: "20%",
+        cursor: "pointer"
     }
   }
 
