@@ -73,14 +73,15 @@ const PostFeed = (props) => {
                                 dispatch(removeLike(post._id))
                             }} className="unLike" src="https://bit.ly/3BQykU4" alt="" /> :null
                         }
-                        <button>
-                            <Link to={`/post/${post._id}`} >Comment</Link>
-                        </button>
+                       
                     </div>
                     <div className="action">
+                        <button className="commentBtn">
+                            <Link style={{textDecoration:"none", color:"white"}} to={`/post/${post._id}`} >Comment</Link>
+                        </button>
                         {
                             post.user === id
-                            ?<button 
+                            ?<button  className="deleteBtn"
                             type="button"
                             onClick={() => {onDelete(post._id)}}
                             >
