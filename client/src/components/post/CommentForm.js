@@ -3,7 +3,7 @@ import TextAreaFieldGroup from '../common/TextAreaFeildGroup'
 import {addPost} from '../../actions/postActions'
 import {useSelector, useDispatch} from 'react-redux'
 import {addComment} from '../../actions/postActions'
-
+import './CommentForm.css'
 
 const CommentForm = (props) => {
 
@@ -23,27 +23,19 @@ const CommentForm = (props) => {
         setText('')
     }
     return (
-        <div className="post-form mb-3">
-            <div className="card card-info">
-              <div className="card-header bg-info text-white">
-                Make a comment...
-              </div>
-              <div className="card-body">
-                <form onSubmit ={onSubmit}>
-                  <div className="form-group">
-                    <TextAreaFieldGroup
-                        placeholder="Reply to post"
-                        name={text}
-                        value={text}
-                        onChange={(e) => setText(e.target.value)}
-                        errors ={errors.text}
-                    />
-                  </div>
-                  <button type="submit" className="btn btn-dark">Submit</button>
-                </form>
-              </div>
-            </div>
-          </div>
+        <div className="commentForm">
+          <form onSubmit ={onSubmit}>
+              <input
+                  placeholder="Comment something..."
+                  name={text}
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  errors ={errors.text}
+              />
+              {errors.text}
+            <button type="submit">Submit</button>
+          </form>
+        </div>
     )
 }
 
