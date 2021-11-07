@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import TextFieldGroup from '../common/TextFieldGroup'
 import TextAreaFeildGroup from '../common/TextAreaFeildGroup'
 import {addEdu} from '../../actions/profileActions'
+import './AddEdu.css'
 
 function AddEdu(){
 
@@ -34,10 +35,7 @@ function AddEdu(){
       const errors = useSelector(state => state.errors)
 
     return(
-            <div>
-              <a href="dashboard.html">
-                Go Back
-              </a>
+            <div className="addEdu">
               <h1>Add Your Education</h1>
               <p>Add any school, bootcamp, etc that you have attended</p>
               <small className="d-block pb-3">* = required field</small>
@@ -96,18 +94,17 @@ function AddEdu(){
                   }} 
                   />
                 <label htmlFor="current" >
-                  Current Job
+                  Currently Enrolled
                 </label>
               </div>
                 <TextAreaFeildGroup
-                placeholder="pROGRAM Description"
+                placeholder="Program Description"
                 name="description"
                 value={description}
                 errors={errors.description}
                 onChange={(e) => setDescription(e.target.value)}
               />
-              <small>Some of your responsabilities, etc</small>
-                <input type="submit"/>
+                <input className="btn" type="submit"/>
               </form>
             </div>
     )

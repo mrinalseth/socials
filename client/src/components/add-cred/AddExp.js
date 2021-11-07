@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import TextFieldGroup from '../common/TextFieldGroup'
 import TextAreaFeildGroup from '../common/TextAreaFeildGroup'
 import {addExp} from '../../actions/profileActions'
+import './AddExp.css'
 
 function AddExp(){
 
@@ -34,16 +35,9 @@ function AddExp(){
   const errors = useSelector(state => state.errors)
 
   return(
-      <div className="section add-experience">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-8 m-auto">
-            <a href="dashboard.html" className="btn btn-light">
-              Go Back
-            </a>
+          <div className="addExp">
             <h1 className="display-4 text-center">Add Your Experience</h1>
             <p className="lead text-center">Add any developer/programming positions that you have had in the past</p>
-            <small className="d-block pb-3">* = required field</small>
             <form action="add-experience" onSubmit={onSubmit}>  
               <TextFieldGroup
                 placeholder='Job Title'
@@ -109,13 +103,9 @@ function AddExp(){
                 errors={errors.description}
                 onChange={(e) => setDescription(e.target.value)}
               />
-              <small className="form-text text-muted">Some of your responsabilities, etc</small>
-              <input type="submit" className="btn btn-info btn-block mt-4" />
+              <input type="submit" className="btn" />
             </form>
           </div>
-        </div>
-      </div>
-    </div>
   )
 }
 export default AddExp
