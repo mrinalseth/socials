@@ -18,7 +18,7 @@ const Post = () => {
     if(post === null || loading || Object.keys(post).length === 0){
         postContent = <Spinner/>
     }else{
-        postContent = <DisplayComment comment={post.comment}/>
+        postContent = <DisplayComment comment={post.comment} postId={post._id}/>
     }
     let mediaData
     if(post.mediaType === 'image'){

@@ -1,9 +1,11 @@
 import axios from 'axios'
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteComment } from '../../actions/postActions'
 import './Comment.css'
 
-const DisplayComment = ({comment}) => {
+const DisplayComment = ({comment, postId}) => {
+    const dispatch = useDispatch()
     const {user} = useSelector(state => state.auth)
     return(
         <div className="commentContainer" >
@@ -24,7 +26,10 @@ const DisplayComment = ({comment}) => {
                         <div className="right">
                             {
                                 user.id === com.user ?
-                                <button>Delete</button> :
+                                <button onClick={() => {
+                                   dispatch(deleteComment(postId, com._id)) 
+                                   window.location.reload()
+                                }} >Delete</button> :
                                 null
                             }
                         </div>

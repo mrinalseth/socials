@@ -117,8 +117,7 @@ router.get('/:post_id',(req,res)=>{
  router.delete('/comment/:post_id/:comm_id',passport.authenticate('jwt',{session:false}),(req,res)=>{
    Post.findById(req.params.post_id)
    .then(post=>{
-    if(
-        post.comment.filter(comment=>comment._id.toString()===req.params.comm_id).length === 0){
+    if(post.comment.filter(comment=>comment._id.toString()===req.params.comm_id).length === 0){
             return res.status(400).json({msg:'u havent commented'})
         }
         const removeIndex = post.comment

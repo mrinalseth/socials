@@ -56,64 +56,6 @@ const getSinglePost = (id) => dispatch => {
         })
     })
 }
-
-// get single post
-// const getSinglePost = (id) => dispatch => {
-//     dispatch(setPostLoading())
-//     axios.get(`/api/post/${id}`)
-//     .then(res => {
-//         dispatch({
-//             type: GET_POST ,
-//             payload: res.data
-//         })
-//     })
-//     .catch(err => {
-//         dispatch({
-//             type: GET_POST,
-//             payload: null
-//         })
-//     })
-// }
-
-
-// const getSinglePost = (id) => {
-//     return async dispatch => {
-//         dispatch(setPostLoading())
-//         try{
-//             const res = await axios
-//             axios.get(`/api/post/${id}`)
-//             .then(res => {
-//                 dispatch({
-//                     type: GET_POST ,
-//                     payload: res.data
-//                 })
-//             })
-//         }catch(err){
-//             dispatch({
-//                 type: GET_POST,
-//                 payload: null
-//             })
-//         }
-//     }
-// }
-
-// const getSinglePost = (id) => {
-//     return async (dispatch) => {
-//         try {
-//             const res = await axios.get(`/api/post/${id}`)
-//             dispatch({
-//                 type: GET_POST,
-//                 payload: res.data
-//             })
-//         }catch (err) {
-//             dispatch({
-//                 type: GET_POST,
-//                 payload: null
-//             })
-//         }
-//     }
-// }
-
 // delete post
 
 const deletePost = id => dispatch => {
@@ -180,6 +122,16 @@ const addComment = (postId, commentData) => dispatch => {
     })
 }
 
+const deleteComment = (postId, commentId) => {
+    return async (dispatch) => {
+        try {
+            await axios.delete(`/api/post/comment/${postId}/${commentId}`)
+        }catch (err) {
+            console.log(err.response)
+        }
+    }
+}
+
 
 //set loading state
 const setPostLoading = () => {
@@ -195,5 +147,6 @@ export {
     addLike,
     removeLike,
     getSinglePost,
-    addComment
+    addComment,
+    deleteComment
 }
