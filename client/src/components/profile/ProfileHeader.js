@@ -11,7 +11,7 @@ const ProfileHeader = (props) =>{
     <img src={props.profile.user.avatar}/>
 
     <div className="resume">
-      <img src="https://bit.ly/3w2xzGm" alt="" />
+      <img src="../images/pdf.svg" alt="" />
       <a target="_blank" href={props.profile.cv}>Resume</a>
     </div>
     
@@ -32,7 +32,7 @@ const ProfileHeader = (props) =>{
     {isEmpty(props.profile.website)?null:(
       <li>
         <a className="text-white p-2" href={props.profile.website}>
-          <img src="https://bit.ly/3bsnFo7"/>
+          <img src="../images/globe.svg"/>
         </a>
       </li>
     )}
@@ -40,35 +40,35 @@ const ProfileHeader = (props) =>{
     {isEmpty(props.profile.social && props.profile.social.twitter)?null:(
       <li>
         <a className="text-white p-2" href={props.profile.social.twitter}>
-          <img src="https://bit.ly/3Cyyz7u"/>
+          <img src="../images/twitter.svg"/>
         </a>
       </li>
     )}
     {isEmpty(props.profile.social && props.profile.social.facebook)?null:(
       <li>
       <a className="text-white p-2" href={props.profile.social.facebook}>
-        <img src="https://bit.ly/2ZIhf1U"/> 
+        <img src="../images/facebook.svg"/> 
       </a>
       </li>
     )}
     {isEmpty(props.profile.social && props.profile.social.linkdin)?null:(
       <li>
       <a className="text-white p-2" href={props.profile.social.linkdin}>
-        <img src="https://bit.ly/31kIgc6"/> 
+        <img src="../images/linkdin.svg"/> 
       </a>
       </li>
     )}
     {isEmpty(props.profile.social && props.profile.social.instagram)?null:(
       <li>
       <a className="text-white p-2" href={props.profile.social.instagram}>
-        <img src="https://bit.ly/3pVzCLf"/>
+        <img src="../images/instagram.svg"/>
       </a>
       </li>
     )}
     {isEmpty(props.profile.social && props.profile.social.youtube)?null:(
       <li>
       <a className="text-white p-2" href={props.profile.social.youtube}>
-        <img src="https://bit.ly/2ZO3heD"/>
+        <img src="../images/youtube.svg"/>
       </a>
       </li>
     )}

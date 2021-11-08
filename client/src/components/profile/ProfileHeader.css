@@ -83,16 +83,20 @@
       margin-left: -10px;
 }
 
+.profile-card > header > .resume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .profile-card > header > .resume > img {
-    width: 30px;
-    margin-right: 10px;
+    width: 40px;
 }
 
 .profile-card > header > .resume > a {
     text-decoration: none;
     font-size: 24px;
     color: white;
-    padding: 10px;
     font-weight: bold;
 }
 
