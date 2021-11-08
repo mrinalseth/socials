@@ -39,7 +39,7 @@ height: 100%;
 const BgImage = styled.div`
     height: 100%;
     backgroung-position: top;
-    background-image: url('/images/landing.jfif');
+    background-image: url('/images/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
