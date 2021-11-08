@@ -2,7 +2,6 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
 import {deletePost, addLike, removeLike} from '../../actions/postActions'
-import classnames from 'classnames'
 import './PostFeed.css'
 
 const PostFeed = (props) => {
@@ -59,19 +58,16 @@ const PostFeed = (props) => {
                         {post.text}
                     </div>
                     <div className="media">{mediaData}</div>
-                    <div 
-                        className="reaction"
-                        >
-                        <img
-                        onClick={() => {
+                    <div className="reaction">
+                        <img onClick={() => {
                                 dispatch(addLike(post._id))
-                            }}  className="like" src="https://bit.ly/2ZZAL9z" alt="" />
+                            }}  className="like" src="./images/like.svg" alt="" />
                         <p className="count">{post.likes.length}</p>
                         {
                             findUser(post.likes) ?
                             <img  onClick={() => {
                                 dispatch(removeLike(post._id))
-                            }} className="unLike" src="https://bit.ly/3BQykU4" alt="" /> :null
+                            }} className="unLike" src="./images/dislike.svg" alt="" /> :null
                         }
                        
                     </div>

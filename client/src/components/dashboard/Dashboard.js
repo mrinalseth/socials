@@ -65,7 +65,7 @@ function Dashboard()
                         <ProfileActions/>
                     </div>
                     <div className="dashboard__resume">
-                        <img src="https://bit.ly/3w2xzGm" alt="" />
+                        <img src="./images/pdf.svg" alt="" />
                         <a target="_blank" href={profile.cv}>Resume</a>
                     </div>
                     <div className="dashboard__exp">

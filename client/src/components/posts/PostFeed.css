@@ -70,23 +70,21 @@
 
 .postFeed > .postFeedCard > .reaction {
     display: flex;
-    flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .postFeed > .postFeedCard > .reaction > .like {
     width: 25px;
-    padding: 10px;
+    margin: 5px;
     cursor: pointer;
 }
 
 .postFeed > .postFeedCard > .reaction > .unLike {
-    width: 25px;
+    width: 30px;
     padding: 10px;
     cursor: pointer;
-    margin-top: 15px;
-    margin-left: 25px;
+    margin: 5px;
 }
 
 .postFeed > .postFeedCard > .action > .deleteBtn {

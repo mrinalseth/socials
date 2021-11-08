@@ -29,9 +29,8 @@
 }
 
 .dashboard__resume > img {
-    height: 30px;
-    width: 30px;
-    margin-right: 5px;
+    height: 40px;
+    width: 40px;
 }
 
 .dashboard__resume > a {
@@ -39,7 +38,7 @@
     color: #1b2411;
     font-size: 24px;
     font-weight: bold;
-    padding: 10px;
+    padding: 5px;
 }
 
 .dashboard__resume > a:hover {
