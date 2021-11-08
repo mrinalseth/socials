@@ -51,24 +51,32 @@ router.post('/',passport.authenticate('jwt',{session:false}),
         if(req.body.linkdin) profileField.social.linkdin = req.body.linkdin
         if(req.body.instagram) profileField.social.instagram = req.body.instagram
 
-        Profile.findOne({user:req.user.id})
-        .then((profile)=>{
-            if(profile){
-                Profile.findOneAndUpdate(
-                    {user:req.user.id},
-                    {$set:profileField},
-                    {new:true},
-                )
-                .then(profile => res.json(profile))
+        Profile.findOne({handle: profileField.handle})
+        .then(profile => {
+            if(profile) {
+                err.handle = "Please select a unique handle"
+                return res.status(400).json(err)
             }else{
-                Profile.findOne({handle:profileField.handle})
-                .then(profile =>{
+                Profile.findOne({user:req.user.id})
+                .then((profile)=>{
                     if(profile){
-                        err.handle='Handle exist'
-                        return res.status(400).json(err)
+                        Profile.findOneAndUpdate(
+                            {user:req.user.id},
+                            {$set:profileField},
+                            {new:true},
+                        )
+                        .then(profile => res.json(profile))
+                    }else{
+                        Profile.findOne({handle:profileField.handle})
+                        .then(profile =>{
+                            if(profile){
+                                err.handle='Please select a unique handle'
+                                return res.status(400).json(err)
+                            }
+                            new Profile(profileField).save()
+                            .then(profile => res.json(profile))
+                        })
                     }
-                    new Profile(profileField).save()
-                    .then(profile => res.json(profile))
                 })
             }
         })
