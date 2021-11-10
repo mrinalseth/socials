@@ -36,7 +36,7 @@ const ProfileCred = (props) =>{
                     )
                 })}
                 </div>
-            <h3 className="heading">Experience</h3>
+            <h3 className="heading">Education</h3>
 
               <div className="expContainer">
                 {props.profile.education.map((edu) => {

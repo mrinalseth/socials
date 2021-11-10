@@ -59,16 +59,16 @@ const PostFeed = (props) => {
                     </div>
                     <div className="media">{mediaData}</div>
                     <div className="reaction">
-                        <img onClick={() => {
-                                dispatch(addLike(post._id))
-                            }}  className="like" src="./images/like.svg" alt="" />
-                        <p className="count">{post.likes.length}</p>
                         {
                             findUser(post.likes) ?
-                            <img  onClick={() => {
+                            <img src="./images/heart.svg" alt="" onClick={() => {
                                 dispatch(removeLike(post._id))
-                            }} className="unLike" src="./images/dislike.svg" alt="" /> :null
+                            }}  className="heart" /> :
+                            <img src="./images/heartOutline.svg" alt="" onClick={() => {
+                                dispatch(addLike(post._id))
+                            }} className="heart" />
                         }
+                        <p className="count">{post.likes.length}</p>
                        
                     </div>
                     <div className="action">
