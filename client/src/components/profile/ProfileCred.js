@@ -13,7 +13,7 @@ const ProfileCred = (props) =>{
                         end = new Date(exp.to).toLocaleDateString()
                     }
                     return(
-                        <div key={exp} className="expCard" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
+                        <div key={exp._id} className="expCard" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
                             <div class="year">
                                 <div><span>Comapny: </span>{exp.company}</div>
                                 <div><span>Year: </span>{start} - {end}</div>
@@ -34,7 +34,7 @@ const ProfileCred = (props) =>{
                         end = new Date(edu.to).toLocaleDateString()
                     }
                     return(
-                        <div key={edu} className="expCard" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
+                        <div key={edu._id} className="expCard" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
                             <div class="year">
                                 <div><span>School: </span>{edu.school}</div>
                                 <div><span>Year: </span>{start} - {end}</div>
