@@ -47,7 +47,9 @@ function Dashboard()
 
     }else{
         if(profile === null || loading){
-            dashboardContent = <h4></h4>
+            dashboardContent = <h4>
+            {/* <Spinner/> */}
+            </h4>
         }else{
             if(Object.keys(profile).length>0){
                 dashboardContent = 
