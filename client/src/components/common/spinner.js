@@ -1,7 +1,7 @@
 import React from 'react'
 import loading from "./loading.gif"
 
-const spinner = () => {
+const Spinner = () => {
     return(
         <div>
             <img 
@@ -17,4 +17,4 @@ const spinner = () => {
     )
 }
 
-export default spinner;
+export default Spinner;

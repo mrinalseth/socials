@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import TextAreaFieldGroup from '../common/TextAreaFeildGroup'
 import {addPost} from '../../actions/postActions'
 import {useSelector, useDispatch} from 'react-redux'
 import {getPost} from '../../actions/postActions'

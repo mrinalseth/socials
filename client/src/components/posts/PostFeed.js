@@ -46,14 +46,14 @@ const PostFeed = (props) => {
             }
             const date = new Date(post.date)
             return(
-                <div className="postFeedCard">
-                    <iv className="header">
+                <div key={post._id} className="postFeedCard">
+                    <div className="header">
                         <img src={post.avatar} alt="" />
                         <div className="details">
                             <div className="name">{post.name}</div>
                             <div className="date">{date.toDateString()}</div>
                         </div>
-                    </iv>
+                    </div>
                     <div className="text">
                         {post.text}
                     </div>

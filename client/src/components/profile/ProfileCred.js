@@ -2,18 +2,6 @@ import React from 'react'
 import './ProfileCred.css'
 
 const ProfileCred = (props) =>{
-    // <li key={education._id} className="list-group-item">
-    //                         <h4>{education.school}</h4>
-    //                         <p>{education.from}</p>
-    //                         <p>
-    //                             <strong>Degree: </strong>{education.degree}
-    //                         </p>
-    //                         <p>
-    //                             <strong>Field Of Study: </strong>{education.fieldofstudy}
-    //                         </p>
-    //                             <p>
-    //                         <strong>Description:</strong> {education.description}</p>
-    //                     </li>
     return (
         <div className="container">
               <h3 className="heading">Experience</h3>

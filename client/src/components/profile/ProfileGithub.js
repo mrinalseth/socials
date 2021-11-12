@@ -1,21 +1,31 @@
 import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
 import axios from 'axios'
 
 const ProfileGithub = (props) =>{
-
-    const [clientId, setClientId] = useState('31d64130efcb45fcc8bc')
-    const [clientSecret, setClientSecret] = useState('a68badb083dd937b2756a2431eb8a197d9296683')
-    const [count, setCount] = useState(20)
-    const [sort, setSort] = useState('created: asc')
     const [repos, setRepos] = useState([])
+    const clientId = "31d64130efcb45fcc8bc"
+    const clientSecret = "a68badb083dd937b2756a2431eb8a197d9296683"
+    const count = 20
+    const sort = "created: asc"
 
     useEffect(() => {
-        axios.get(`https://api.github.com/users/${props.profile.github}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`)
-        .then(res => setRepos(res.data))
-        .catch(err => console.log(err))
+        // axios.get(`https://api.github.com/users/${props.profile.github}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`)
+        // .then(res => setRepos(res.data))
+        // .catch(err => console.log(err))
+        console.log(props.profile.github)
+        const fetch = async () => {
+           try {
+                // const res = await axios.get(`https://api.github.com/users/${props.profile.github}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`)
+                const res = await axios.get(`https://api.github.com/users/${props.profile.github}/repos`)
+                setRepos(res.data)
+           }catch(err) {
+                console.log(err)
+           }
+
+        }
+        fetch()
+
     }, [])
-    console.log(repos)
 
     const repoItems = repos.map((repo) => {
         return(

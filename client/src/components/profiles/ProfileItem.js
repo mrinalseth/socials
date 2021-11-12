@@ -1,6 +1,4 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import {isEmpty} from '../../validation/isEmpty'
 import {Link} from 'react-router-dom'
 import './ProfileItem.css'
 
@@ -9,7 +7,7 @@ const ProfileItem = (props) => {
         <div className='profileContainer'>
             {props.profiles.map((profile) => {
                 return (
-                    <div className='profileCard'>
+                    <div key={profile._id} className='profileCard'>
                         <div className="left">
                             <img src={profile.user.avatar} alt="" />
                             <div className="details">

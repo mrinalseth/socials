@@ -4,7 +4,7 @@ import ProfileAbout from './ProfileAbout'
 import ProfileCred from './ProfileCred'
 import ProfileGithub from './ProfileGithub'
 import ProfileHeader from './ProfileHeader'
-import Spinner from '../common/spinner'
+import Spinner from '../common/Spinner'
 import { useDispatch, useSelector } from 'react-redux'
 import {getProfileByHandle} from '../../actions/profileActions'
 import './Profile.css'
@@ -35,7 +35,7 @@ const Profile = () => {
                 <ProfileHeader profile={profile} />
                 <ProfileAbout profile={profile}/>
                 <ProfileCred profile={profile}/>
-                {profile.github?<ProfileGithub profile={profile}/>:null}
+                {/* {profile.github?<ProfileGithub profile={profile}/>:null} */}
                 
             </div>
         )

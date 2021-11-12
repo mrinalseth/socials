@@ -1,5 +1,4 @@
 import React from 'react'
-import classnames from 'classnames'
 import {useDispatch, useSelector} from 'react-redux'
 import {registerUser} from '../../actions/authActions'
 import TextFieldGroup from '../common/TextFieldGroup'
@@ -79,7 +78,7 @@ function Register(){
   <Content>
       <CTA>
         <div style={styles.main}>
-          <p style={styles.sign} align="center">Sign in</p>
+          <p style={styles.sign} align="center">Sign Up</p>
           <form style={styles.form1}noValidate onSubmit={onSubmit}>
           <TextFieldGroup
                   type = "text"

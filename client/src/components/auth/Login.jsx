@@ -6,7 +6,6 @@ import styled from 'styled-components'
 
 function Login(){
 
-  const {isAuthenticated, user} = useSelector(state => state.auth)
 
   const [email,setEmail] = React.useState('')
   const [password,setPassword] = React.useState('')

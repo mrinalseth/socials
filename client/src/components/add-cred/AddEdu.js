@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {Link} from 'react-router-dom' 
 import TextFieldGroup from '../common/TextFieldGroup'
 import TextAreaFeildGroup from '../common/TextAreaFeildGroup'
 import {addEdu} from '../../actions/profileActions'

@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react'
 import PostForm from './PostForm'
-import Spinner from '../common/spinner'
+import Spinner from '../common/Spinner'
 import {useDispatch, useSelector} from 'react-redux'
 import { Redirect } from 'react-router'
 import {getPost} from '../../actions/postActions'
 import PostFeed from './PostFeed'
-import storage from '../../firebase'
 import './Post.css'
 
 
@@ -13,11 +12,11 @@ const Posts = () => {
     
     const {isAuthenticated} = useSelector(state => state.auth)
     const dispatch = useDispatch()
+    const {posts, loading} = useSelector(state => state.post)
 
     useEffect(() => {
         dispatch(getPost())
     },[])
-    const {posts, loading} = useSelector(state => state.post)
 
     if(!isAuthenticated){
         return(<Redirect to="/login" />)
@@ -26,7 +25,7 @@ const Posts = () => {
     let postContent
 
 
-    if(posts === null || loading){
+    if(posts === null || loading || posts.length === 0){
         postContent = <Spinner/>
     }else{
         postContent = <PostFeed posts = {posts} />
