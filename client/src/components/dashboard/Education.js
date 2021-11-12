@@ -13,11 +13,11 @@ const Experience = (props) => {
             end = new Date(edu.to).toLocaleDateString()
         }
         return(
-            <div class="table-row">		
-				<div class="table-data">{edu.school}</div>
-				<div class="table-data">{edu.degree}</div>
-				<div class="table-data">{edu.fieldofstudy}</div>
-				<div class="table-data">{start} - {end}</div>
+            <div className="table-row">		
+				<div className="table-data">{edu.school}</div>
+				<div className="table-data">{edu.degree}</div>
+				<div className="table-data">{edu.fieldofstudy}</div>
+				<div className="table-data">{start} - {end}</div>
                 <div className="table-data">
                     <button className='btn btn-danger' onClick={() => {
                             handleClick(edu._id)
@@ -28,15 +28,15 @@ const Experience = (props) => {
         )
     })
     return(
-        <div class="table">
-            <div class="table-header">
-                <div class="header__item"><a id="name" class="filter__link" href="#">School</a></div>
-                <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Degree</a></div>
-                <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Field</a></div>
-                <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Year</a></div>
-                <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#"></a></div>
+        <div className="table">
+            <div className="table-header">
+                <div className="header__item"><a id="name" className="filter__link" href="#">School</a></div>
+                <div className="header__item"><a id="wins" className="filter__link filter__link--number" href="#">Degree</a></div>
+                <div className="header__item"><a id="draws" className="filter__link filter__link--number" href="#">Field</a></div>
+                <div className="header__item"><a id="draws" className="filter__link filter__link--number" href="#">Year</a></div>
+                <div className="header__item"><a id="draws" className="filter__link filter__link--number" href="#"></a></div>
             </div>
-            <div class="table-content">	
+            <div className="table-content">	
                 {education}
             </div>	
 	    </div>
