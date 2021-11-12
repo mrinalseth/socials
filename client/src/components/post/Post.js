@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {getSinglePost} from '../../actions/postActions'
 import {useParams} from 'react-router-dom'
-import Spinner from '../common/Spinner'
+// import Spinner from '../common/Spinner'
 import CommentForm from './CommentForm'
 import DisplayComment from './DisplayComment'
 import './Post.css'
@@ -16,7 +16,8 @@ const Post = () => {
     const {post, loading} = useSelector(store => store.post)
     let postContent;
     if(post === null || loading || Object.keys(post).length === 0){
-        postContent = <Spinner/>
+        // postContent = <Spinner/>
+        postContent = <p>loading</p>
     }else{
         postContent = <DisplayComment comment={post.comment} postId={post._id}/>
     }
