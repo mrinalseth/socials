@@ -35,7 +35,7 @@ const Profile = () => {
                 <ProfileHeader profile={profile} />
                 <ProfileAbout profile={profile}/>
                 <ProfileCred profile={profile}/>
-                {/* {profile.github?<ProfileGithub profile={profile}/>:null} */}
+                {profile.github?<ProfileGithub profile={profile}/>:null}
                 
             </div>
         )

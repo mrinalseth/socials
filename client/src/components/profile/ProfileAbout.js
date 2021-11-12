@@ -6,8 +6,8 @@ const ProfileAbout = (props) =>{
       <div className="skill">
         {props.profile.skills.map((skill) => {
           return(
-            <div key={skill} class="card" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
-              <div class="year">
+            <div key={skill} className="card" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
+              <div className="year">
                 <div>{skill}</div>
               </div>  
             </div>

@@ -9,21 +9,9 @@ const ProfileGithub = (props) =>{
     const sort = "created: asc"
 
     useEffect(() => {
-        // axios.get(`https://api.github.com/users/${props.profile.github}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`)
-        // .then(res => setRepos(res.data))
-        // .catch(err => console.log(err))
-        console.log(props.profile.github)
-        const fetch = async () => {
-           try {
-                // const res = await axios.get(`https://api.github.com/users/${props.profile.github}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`)
-                const res = await axios.get(`https://api.github.com/users/${props.profile.github}/repos`)
-                setRepos(res.data)
-           }catch(err) {
-                console.log(err)
-           }
-
-        }
-        fetch()
+        axios.get(`https://api.github.com/users/${props.profile.github}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`)
+        .then(res => setRepos(res.data))
+        .catch(err => console.log(err))
 
     }, [])
 

@@ -14,7 +14,7 @@ const ProfileCred = (props) =>{
                     }
                     return(
                         <div key={exp._id} className="expCard" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
-                            <div class="year">
+                            <div className="year">
                                 <div><span>Comapny: </span>{exp.company}</div>
                                 <div><span>Year: </span>{start} - {end}</div>
                                 <div><span>Position: </span>{exp.title}</div>
@@ -35,7 +35,7 @@ const ProfileCred = (props) =>{
                     }
                     return(
                         <div key={edu._id} className="expCard" data-tilt data-tilt-scale="0.95" data-tilt-startY="40">
-                            <div class="year">
+                            <div className="year">
                                 <div><span>School: </span>{edu.school}</div>
                                 <div><span>Year: </span>{start} - {end}</div>
                                 <div><span>Degree: </span>{edu.degree}</div>
