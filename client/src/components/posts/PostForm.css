@@ -56,6 +56,24 @@
     align-items: center;
 }
 
+.postForm > form > .bottom > label > img {
+    width: 40px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.postForm > form > .bottom > label > img:hover {
+    transform: scale(1.2);
+}
+
+.postForm > form > .bottom > .fileInput::-webkit-file-upload-button {
+    visibility: none;
+    display: none;
+}
+
+.postForm > form > .bottom > .fileInput {
+    margin-right: auto;
+}
 
 .postForm > form > .bottom > .btn {
     padding: 10px;

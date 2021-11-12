@@ -105,8 +105,9 @@ const PostForm = () => {
             {errors.text}
             {`${text.length}/300`}
           </div>
-           <div className="bottom">
-            <input type="file" onChange={onChange} />
+          <div className="bottom">
+            <label htmlFor="file"><img src="../images/upload.svg" alt="" /></label>
+            <input className="fileInput" id="file" type="file" onChange={onChange} />
             <button className="btn">Post</button>
           </div>
         </form>
