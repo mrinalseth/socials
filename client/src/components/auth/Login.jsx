@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {loginUser} from '../../actions/authActions'
 import TextFieldGroup from '../common/TextFieldGroup'
 import styled from 'styled-components'
+import './Login.css'
 
 function Login(){
 
@@ -34,14 +35,6 @@ function Login(){
   }
 
   const styles = {
-    main: {
-      backgroundColor: "#FFFFFF",
-        width: "600px",
-        height: "400px",
-        margin: "7em auto",
-        borderRadius: "1.5em",
-        boxShadow: "0px 11px 35px 2px rgba(0, 0, 0, 0.14)",
-    },
     sign: {
       paddingTop: "40px",
       color: "#80d43f",
@@ -72,11 +65,8 @@ function Login(){
 
 
   return(
-  <Container>
-  <Content>
-      <CTA>
-        <div style={styles.main}>
-          <p style={styles.sign} align="center">Sign in</p>
+        <div className="login">
+          <p className="sign" align="center">Sign in</p>
           <form style={styles.form1}noValidate onSubmit={onSubmit}>
           <TextFieldGroup
                 type = "email"
@@ -99,9 +89,6 @@ function Login(){
               type="submit"/>
           </form>
         </div>
-      </CTA>
-  </Content>
-</Container>
 )
 }
 const Container = styled.section`
