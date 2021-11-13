@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import PostForm from './PostForm'
-// import Spinner from '../common/Spinner'
+import Loading from '../common/Loading'
 import {useDispatch, useSelector} from 'react-redux'
 import { Redirect } from 'react-router'
 import {getPost} from '../../actions/postActions'
@@ -26,8 +26,7 @@ const Posts = () => {
 
 
     if(posts === null || loading || posts.length === 0){
-        // postContent = <Spinner/>
-        postContent = <p>loading</p>
+        postContent = <Loading/>
     }else{
         postContent = <PostFeed posts = {posts} />
     }

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {getProfiles} from '../../actions/profileActions'
-// import Spinner from '../common/Spinner';
+import Loading from '../common/Loading'
 import ProfileItem from './ProfileItem'
 import './Profiles.css'
 
@@ -16,8 +16,7 @@ const Profiles = () => {
     let profileItems
 
     if(profiles === null || loading){
-        // profileItems = <Spinner/>
-        profileItems = <p>loading</p>
+        profileItems = <Loading/>
     }else{
         if(profiles.length>0){
             profileItems = <ProfileItem profiles={profiles} />
