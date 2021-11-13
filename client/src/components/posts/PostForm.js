@@ -3,6 +3,7 @@ import {addPost} from '../../actions/postActions'
 import {useSelector, useDispatch} from 'react-redux'
 import {getPost} from '../../actions/postActions'
 import storage from '../../firebase'
+import Uploading from '../common/Uploading'
 import './PostForm.css'
 
 const PostForm = () => {
@@ -85,7 +86,7 @@ const PostForm = () => {
       <div className="postForm">
         {
           uploading ?
-          <div className ="loading">Uploading Please wait</div>:
+          <Uploading/>:
           <form onSubmit={onSubmit}>
           <div className="top">
             <img src={avatar} alt="" />
@@ -94,7 +95,7 @@ const PostForm = () => {
               name={text}
               value={text}
               onChange={(e) => {
-                if(text.length<=300) {
+                if(text.split(' ').join('').length<=300) {
                   setText(e.target.value)
                 }else{
                   setText(text.slice(0,300))

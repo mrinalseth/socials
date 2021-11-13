@@ -19,6 +19,8 @@ const PostFeed = (props) => {
             return false
         }
     }
+
+
     return (
         <div className="postFeed" >
         {props.posts.map((post) => {
@@ -28,13 +30,13 @@ const PostFeed = (props) => {
             }
             else if(post.mediaType === 'pdf'){
                 mediaData = <a style={{textDecoration:"none"}} target="_blank" href={post.mediaLink}>
-                    <img src="https://bit.ly/3kectjI" alt="" />
+                    <img src="../images/pdf.svg" alt="" />
                     Open PDF
                 </a>
             }
             else if(post.mediaType === 'word'){
                 mediaData = <a style={{textDecoration:"none"}} target="_blank" href={post.mediaLink}>
-                    <img src="https://bit.ly/3bJJAHm" alt="" />
+                    <img src="../images/word.svg" alt="" />
                     Download attached file
                 </a>
             }
