@@ -62,6 +62,11 @@ const EditProfile = () => {
     const onSubmit = async(e) => {
         e.preventDefault()
         setUploading(true)
+        if(!file.name.includes(".pdf")) {
+          alert('Only PDF allowed')
+          setUploading(false)
+          return
+        }
         const storageRef = storage.ref()
         const fileRef = storageRef.child(file.name)
         await fileRef.put(file)
@@ -87,6 +92,7 @@ const EditProfile = () => {
         setUploading(false)
     }
     const onchange = (e) => {
+      console.log(e.target.files[0])
       setFile(e.target.files[0])
     }
 
@@ -212,6 +218,7 @@ const EditProfile = () => {
                   <div className="bottom">
                     <label htmlFor="pdf">
                       <img src="../images/pdf.svg" alt="" />
+                      Upload resume
                     </label>
                     <input type="file" id="pdf" onChange={onchange} required />
                     <button>Submit</button>
