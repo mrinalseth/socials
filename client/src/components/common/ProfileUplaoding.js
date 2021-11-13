@@ -1,27 +1,26 @@
 import React from 'react'
 import Lottie from 'react-lottie'
-import * as loading from './loading.json'
-import './Loading.css'
+import * as profileUploading from './profileUploading.json'
 
 const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData: loading.default,
+    animationData: profileUploading.default,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
     }
 };
 
-const Loading = () => {
+const ProfileUplaoding = () => {
     return (
-        <div className="loading">
+        <div>
             <Lottie
                 options={defaultOptions}
-                height={120}
-                width={120}
+                height={500}
+                width={500}
             />
         </div>
     )
 }
 
-export default Loading
+export default ProfileUplaoding

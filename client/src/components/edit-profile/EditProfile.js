@@ -8,6 +8,7 @@ import {createProfile} from '../../actions/profileActions'
 import axios from 'axios'
 import TextWithIcon from '../common/TextWithIcon'
 import storage from '../../firebase'
+import ProfileUplaoding from '../common/ProfileUplaoding'
 import './EditProfile.css'
 
 const EditProfile = () => {
@@ -30,6 +31,7 @@ const EditProfile = () => {
     const [youtube,setYoutube] = React.useState("")
     const [instagram,setInstagram] = React.useState("")
     const [file, setFile] = React.useState(null)
+    const [uploading, setUploading] = React.useState(false)
 
 
     
@@ -59,6 +61,7 @@ const EditProfile = () => {
 
     const onSubmit = async(e) => {
         e.preventDefault()
+        setUploading(true)
         const storageRef = storage.ref()
         const fileRef = storageRef.child(file.name)
         await fileRef.put(file)
@@ -81,7 +84,7 @@ const EditProfile = () => {
         }
         console.log(newprofile)
         dispatch(createProfile(newprofile))
-        
+        setUploading(false)
     }
     const onchange = (e) => {
       setFile(e.target.files[0])
@@ -102,120 +105,126 @@ const EditProfile = () => {
     if(!isAuthenticated){
         return(<Redirect to="/login" />)
     }else{
-      return(
-        <div className="editProfile">
-              <h1 className="display-4 text-center">Edit Your Profile</h1>
-              <small className="d-block pb-3">* = required field</small>
-              <form action="add-experience.html" onSubmit={onSubmit}>
-                <TextFieldGroup
-                  type = "text"
-                  errors = {errors.handle}
-                  placeholder = "Profile Handle"
-                  name = "handle"
-                  value = {handle}
-                  onChange = {(e)=>{setHandle(e.target.value)}}
-                />
-                <SelectListGroup
-                  errors = {errors.status}
-                  placeholder = "Status"
-                  name = "status"
-                  value = {status}
-                  options={options}
-                  onChange = {(e)=>{setStatus(e.target.value)}}
-                />
-                <TextFieldGroup
-                  type = "text"
-                  errors = {errors.name}
-                  placeholder = "Company"
-                  name = "company"
-                  value = {company}
-                  onChange = {(e)=>{setCompany(e.target.value)}}
-                />
-                <TextFieldGroup
-                  type = "text"
-                  errors = {errors.name}
-                  placeholder = "Website"
-                  name = "website"
-                  value = {website}
-                  onChange = {(e)=>{setWebsite(e.target.value)}}
-                />
-                <TextFieldGroup
-                  type = "text"
-                  errors = {errors.name}
-                  placeholder = "Location"
-                  name = "location"
-                  value = {location}
-                  onChange = {(e)=>{setLocation(e.target.value)}}
-                />
-                <TextFieldGroup
-                  type = "text"
-                  errors = {errors.skills}
-                  placeholder = "Skills"
-                  name = "skills"
-                  value = {skills}
-                  onChange = {(e)=>{setSkills(e.target.value)}}
-                />
-                
-                <TextAreaFieldGroup
-                  errors = {errors.name}
-                  placeholder = "A short bio of yourself"
-                  name = "bio"
-                  value = {bio}
-                  onChange = {(e)=>{setBio(e.target.value)}}
-                />
-                <span className="text-muted">Optional</span>
-                <TextWithIcon
-                  icon=""
-                  type="text"
-                  errors={errors.twitter}
-                  placeholder="Twitter"
-                  name={twitter}
-                  value={twitter}
-                  onChange={(e) => setTwitter(e.target.value)}
-                />
-                <TextWithIcon
-                  icon=""
-                  type="text"
-                  errors={errors.facebook}
-                  placeholder="Facebook"
-                  name={facebook}
-                  value={facebook}
-                  onChange={(e) => setFacebook(e.target.value)}
-                />
-                <TextWithIcon
-                  icon=""
-                  type="text"
-                  errors={errors.linkdin}
-                  placeholder="Linkedin"
-                  name={linkdin}
-                  value={linkdin}
-                  onChange={(e) => setLinkedin(e.target.value)}
-                />
-                <TextWithIcon
-                  icon=""
-                  type="text"
-                  errors={errors.youtube}
-                  placeholder="Youtube"
-                  name={youtube}
-                  value={youtube}
-                  onChange={(e) => setYoutube(e.target.value)}
-                />
-                <TextWithIcon
-                  icon=""
-                  type="text"
-                  errors={errors.instagram}
-                  placeholder="Instagram"
-                  name={instagram}
-                  value={instagram}
-                  onChange={(e) => setInstagram(e.target.value)}
-                />
-                <input 
-                    type="submit"
-                />
-                <input type="file" onChange={onchange} required />
-              </form>
-      </div>
-    )
+      if(uploading) {
+        return (
+          <ProfileUplaoding/>
+        )
+      }else{
+        return(
+          <div className="editProfile">
+                <h1 className="display-4 text-center">Edit Your Profile</h1>
+                <small className="d-block pb-3">* = required field</small>
+                <form action="add-experience.html" onSubmit={onSubmit}>
+                  <TextFieldGroup
+                    type = "text"
+                    errors = {errors.handle}
+                    placeholder = "Profile Handle"
+                    name = "handle"
+                    value = {handle}
+                    onChange = {(e)=>{setHandle(e.target.value)}}
+                  />
+                  <SelectListGroup
+                    errors = {errors.status}
+                    placeholder = "Status"
+                    name = "status"
+                    value = {status}
+                    options={options}
+                    onChange = {(e)=>{setStatus(e.target.value)}}
+                  />
+                  <TextFieldGroup
+                    type = "text"
+                    errors = {errors.name}
+                    placeholder = "Company"
+                    name = "company"
+                    value = {company}
+                    onChange = {(e)=>{setCompany(e.target.value)}}
+                  />
+                  <TextFieldGroup
+                    type = "text"
+                    errors = {errors.name}
+                    placeholder = "Website"
+                    name = "website"
+                    value = {website}
+                    onChange = {(e)=>{setWebsite(e.target.value)}}
+                  />
+                  <TextFieldGroup
+                    type = "text"
+                    errors = {errors.name}
+                    placeholder = "Location"
+                    name = "location"
+                    value = {location}
+                    onChange = {(e)=>{setLocation(e.target.value)}}
+                  />
+                  <TextFieldGroup
+                    type = "text"
+                    errors = {errors.skills}
+                    placeholder = "Skills"
+                    name = "skills"
+                    value = {skills}
+                    onChange = {(e)=>{setSkills(e.target.value)}}
+                  />
+                  
+                  <TextAreaFieldGroup
+                    errors = {errors.name}
+                    placeholder = "A short bio of yourself"
+                    name = "bio"
+                    value = {bio}
+                    onChange = {(e)=>{setBio(e.target.value)}}
+                  />
+                  <span className="text-muted">Optional</span>
+                  <TextWithIcon
+                    icon=""
+                    type="text"
+                    errors={errors.twitter}
+                    placeholder="Twitter"
+                    name={twitter}
+                    value={twitter}
+                    onChange={(e) => setTwitter(e.target.value)}
+                  />
+                  <TextWithIcon
+                    icon=""
+                    type="text"
+                    errors={errors.facebook}
+                    placeholder="Facebook"
+                    name={facebook}
+                    value={facebook}
+                    onChange={(e) => setFacebook(e.target.value)}
+                  />
+                  <TextWithIcon
+                    icon=""
+                    type="text"
+                    errors={errors.linkdin}
+                    placeholder="Linkedin"
+                    name={linkdin}
+                    value={linkdin}
+                    onChange={(e) => setLinkedin(e.target.value)}
+                  />
+                  <TextWithIcon
+                    icon=""
+                    type="text"
+                    errors={errors.youtube}
+                    placeholder="Youtube"
+                    name={youtube}
+                    value={youtube}
+                    onChange={(e) => setYoutube(e.target.value)}
+                  />
+                  <TextWithIcon
+                    icon=""
+                    type="text"
+                    errors={errors.instagram}
+                    placeholder="Instagram"
+                    name={instagram}
+                    value={instagram}
+                    onChange={(e) => setInstagram(e.target.value)}
+                  />
+                  <input 
+                      type="submit"
+                  />
+                  <input type="file" onChange={onchange} required />
+                </form>
+        </div>
+      )
+      }
     }
 }
 export default EditProfile
