@@ -115,14 +115,6 @@ const EditProfile = () => {
                 <h1 className="display-4 text-center">Edit Your Profile</h1>
                 <small className="d-block pb-3">* = required field</small>
                 <form action="add-experience.html" onSubmit={onSubmit}>
-                  <TextFieldGroup
-                    type = "text"
-                    errors = {errors.handle}
-                    placeholder = "Profile Handle"
-                    name = "handle"
-                    value = {handle}
-                    onChange = {(e)=>{setHandle(e.target.value)}}
-                  />
                   <SelectListGroup
                     errors = {errors.status}
                     placeholder = "Status"

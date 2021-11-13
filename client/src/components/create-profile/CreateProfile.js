@@ -95,7 +95,7 @@ const CreateProfile = () => {
                   <TextFieldGroup
                     type = "text"
                     errors = {errors.handle}
-                    placeholder = "Profile Handle"
+                    placeholder = "Profile Handle (I can't be changed later)"
                     name = "handle"
                     value = {handle}
                     onChange = {(e)=>{setHandle(e.target.value)}}
