@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {getCurrentProfile, deleteAccount} from '../../actions/profileActions'
 import {useDispatch, useSelector} from 'react-redux'
 import {Link, Redirect} from 'react-router-dom'
-// import Spinner from '../common/Spinner'
+import Loading from '../common/Loading'
 import ProfileActions from './ProfileActions'
 import axios from 'axios'
 import Experience from './Experience'
@@ -47,9 +47,7 @@ function Dashboard()
 
     }else{
         if(profile === null || loading){
-            dashboardContent = <h4>
-            {/* <Spinner/> */}
-            </h4>
+            dashboardContent = <Loading/>
         }else{
             if(Object.keys(profile).length>0){
                 dashboardContent = 
