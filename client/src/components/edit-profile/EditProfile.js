@@ -209,10 +209,13 @@ const EditProfile = () => {
                     value={instagram}
                     onChange={(e) => setInstagram(e.target.value)}
                   />
-                  <input 
-                      type="submit"
-                  />
-                  <input type="file" onChange={onchange} required />
+                  <div className="bottom">
+                    <label htmlFor="pdf">
+                      <img src="../images/pdf.svg" alt="" />
+                    </label>
+                    <input type="file" id="pdf" onChange={onchange} required />
+                    <button>Submit</button>
+                  </div>
                 </form>
         </div>
       )
