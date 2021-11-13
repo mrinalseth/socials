@@ -10,17 +10,15 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
     margin: 25px;
     background-color: #ccf7a2;
     width: 80%;
+    border-bottom: 10px solid white;
+
 }
 
 .profileContainer > .profileCard:hover {
-    background-color: #031d03;
-    color: #ccf7a2;
-    width: 85%;
-    padding: 25px;
+    border-bottom: 10px solid #031d03;
 }
 
 .profileContainer > .profileCard > .left {
@@ -34,12 +32,6 @@
     padding: 25px;
     border-radius: 100%;
 }
-
-.profileContainer > .profileCard:hover > .left > img {
-    transform: scale(1.5);
-    margin-right: 25px;
-}
-
 .profileContainer > .profileCard > .left > .details > .name {
     font-size: 24px;
     font-weight: bold;
@@ -55,9 +47,4 @@
     color: white;
     padding: 10px;
     font-weight: bold;
-}
-
-.profileContainer > .profileCard:hover > .right > .btn > p {
-    background-color: #ccf7a2;
-    color: #031d03;
 }
