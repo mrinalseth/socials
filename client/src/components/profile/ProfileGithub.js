@@ -13,11 +13,16 @@ const ProfileGithub = (props) =>{
     useEffect(() => {
         const url = `https://api.github.com/users/${props.profile.github}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`
         const fetchData = async () => {
-            const res = await axios.get(url, {'Accept': 'application/vnd.github.v3+json'})
-            setRepos(res.data)
+            try {
+                const res = await axios.get(url, {'Accept': 'application/vnd.github.v3+json'})
+                setRepos(res.data)
+            }catch(err) {
+                console.log(err)
+            }
         }
         fetchData()
-    }, [])
+        console.log(repos)
+    }, [repos])
     const repoItems = repos.length === 0 ? <Repos/> : <div className="repoContainer">
     <div className="header">Github Repositories</div>
     {repos.map((repo) => {
