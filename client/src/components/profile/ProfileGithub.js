@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Repos from '../common/Repos'
 import './ProfileGithub.css'
 import axios from 'axios'
 
@@ -11,41 +12,38 @@ const ProfileGithub = (props) =>{
 
     useEffect(() => {
         const url = `https://api.github.com/users/${props.profile.github}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`
-        axios.get(url, {
-            'Accept': 'application/vnd.github.v3+json'
-        })
-        .then(res => setRepos(res.data))
-        .catch(err => console.log(err))
-
+        const fetchData = async () => {
+            const res = await axios.get(url, {'Accept': 'application/vnd.github.v3+json'})
+            setRepos(res.data)
+        }
+        fetchData()
     }, [])
-
-    const repoItems = 
-    <div className="repoContainer">
-        <div className="header">Github Repositories</div>
-        {repos.map((repo) => {
-        return(
-            <div key={repo.id} className="githubCard">
-                <div className="title">
-                    <a style={{textDecoration:"none"}} href={repo.html_url} target="_blank">{repo.name}</a>
+    const repoItems = repos.length === 0 ? <Repos/> : <div className="repoContainer">
+    <div className="header">Github Repositories</div>
+    {repos.map((repo) => {
+    return(
+        <div key={repo.id} className="githubCard">
+            <div className="title">
+                <a style={{textDecoration:"none"}} href={repo.html_url} target="_blank">{repo.name}</a>
+            </div>
+            <div className="action">
+                <div className="star">
+                    <img style={{color:"white"}} src="../images/star.svg" alt="" />
+                    <p>{repo.stargazers_count}</p>
                 </div>
-                <div className="action">
-                    <div className="star">
-                        <img style={{color:"white"}} src="../images/star.svg" alt="" />
-                        <p>{repo.stargazers_count}</p>
-                    </div>
-                    <div className="watch">
-                        <img style={{color:"white"}} src="../images/eye.svg" alt="" />
-                        <p>{repo.watchers_count}</p>
-                    </div>
-                    <div className="fork">
-                        <img style={{color:"white"}} src="../images/github.svg" alt="" />
-                        <p>{repo.forks_count}</p>
-                    </div>
+                <div className="watch">
+                    <img style={{color:"white"}} src="../images/eye.svg" alt="" />
+                    <p>{repo.watchers_count}</p>
+                </div>
+                <div className="fork">
+                    <img style={{color:"white"}} src="../images/github.svg" alt="" />
+                    <p>{repo.forks_count}</p>
                 </div>
             </div>
-        )
-    })}
-    </div>
+        </div>
+    )
+})}
+</div>
     
 
 
