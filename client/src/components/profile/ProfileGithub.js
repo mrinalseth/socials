@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './ProfileGithub.css'
 import axios from 'axios'
 
 const ProfileGithub = (props) =>{
@@ -9,37 +10,43 @@ const ProfileGithub = (props) =>{
     const sort = "created: asc"
 
     useEffect(() => {
-        axios.get(`https://api.github.com/users/${props.profile.github}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`)
+        const url = `https://api.github.com/users/${props.profile.github}/repos?per_page=${count}&sort=${sort}&client_id=${clientId}&client_secret=${clientSecret}`
+        axios.get(url, {
+            'Accept': 'application/vnd.github.v3+json'
+        })
         .then(res => setRepos(res.data))
         .catch(err => console.log(err))
 
     }, [])
 
-    const repoItems = repos.map((repo) => {
+    const repoItems = 
+    <div className="repoContainer">
+        <div className="header">Github Repositories</div>
+        {repos.map((repo) => {
         return(
-            <div key={repo.id} className="card card-body mb-2">
-                <div className="row">
-                    <div className="col-md-6">
-                        <h4>
-                            <a href={repo.html_url}>{repo.name}</a>
-                        </h4>
-                        <p>{repo.description}</p>
+            <div key={repo.id} className="githubCard">
+                <div className="title">
+                    <a style={{textDecoration:"none"}} href={repo.html_url} target="_blank">{repo.name}</a>
+                </div>
+                <div className="action">
+                    <div className="star">
+                        <img style={{color:"white"}} src="../images/star.svg" alt="" />
+                        <p>{repo.stargazers_count}</p>
                     </div>
-                    <div className="col-md-6">
-                     <span className="mr-1">
-                     <i className="fas fa-star"></i>: {repo.stargazers_count}
-                     </span>
-                     <span className="mr-1">
-                     <i class="fas fa-eye"></i>: {repo.watchers_count}
-                     </span>
-                     <span>
-                     <i className="fas fa-code-branch"></i>: {repo.forks_count}
-                     </span>
+                    <div className="watch">
+                        <img style={{color:"white"}} src="../images/eye.svg" alt="" />
+                        <p>{repo.watchers_count}</p>
+                    </div>
+                    <div className="fork">
+                        <img style={{color:"white"}} src="../images/github.svg" alt="" />
+                        <p>{repo.forks_count}</p>
                     </div>
                 </div>
             </div>
         )
-    })
+    })}
+    </div>
+    
 
 
 
