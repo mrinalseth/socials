@@ -21,7 +21,6 @@ const ProfileGithub = (props) =>{
             }
         }
         fetchData()
-        console.log(repos)
     }, [repos])
     const repoItems = repos.length === 0 ? <Repos/> : <div className="repoContainer">
     <div className="header">Github Repositories</div>
