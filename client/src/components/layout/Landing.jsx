@@ -10,7 +10,7 @@ const Landing = () => {
     <div className="landingPage">
       <LandingOne/>
       <div className="right">
-      <LandingThree/>
+        <LandingThree/>
         <LandingTwo/>
       </div>
     </div>
