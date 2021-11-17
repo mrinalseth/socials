@@ -1,15 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// const Landing = () => {
+//   return (
+//     <Container>
+//       <Content>
+//         <CTA>
+//         </CTA>
+//         <BgImage/>
+//     </Content>
+//   </Container>
+//   )
+// }
+
 const Landing = () => {
   return (
-    <Container>
-      <Content>
-        <CTA>
-        </CTA>
-        <BgImage/>
-    </Content>
-  </Container>
+    <div className="Landing">
+    cdvfdbghngj
+    </div>
   )
 }
 

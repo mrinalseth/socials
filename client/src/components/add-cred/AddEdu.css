@@ -1,7 +1,12 @@
 .addEdu {
-    margin: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
     width: 60%;
-    margin-left: 20%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .addEdu > form > .btn {

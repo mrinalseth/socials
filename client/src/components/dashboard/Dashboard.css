@@ -1,10 +1,10 @@
 .dashboard {
-    margin-top: 100px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .dashboard__header {
