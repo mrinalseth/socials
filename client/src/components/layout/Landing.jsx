@@ -2,7 +2,6 @@ import React from 'react'
 import LandingOne from '../common/Landing1'
 import LandingTwo from '../common/Landing2'
 import LandingThree from '../common/Landing3'
-import styled from 'styled-components'
 import './Landing.css'
 
 const Landing = () => {
