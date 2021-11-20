@@ -11,14 +11,13 @@
     justify-content: space-around;
     align-items: center;
     margin: 25px;
-    background-color: #a4ee5a;
+    background-color: #696967;
     width: 80%;
-    border-bottom: 10px solid white;
 
 }
 
 .profileContainer > .profileCard:hover {
-    border-bottom: 10px solid #031d03;
+    background-color: black;
 }
 
 .profileContainer > .profileCard > .left {
@@ -35,16 +34,27 @@
 .profileContainer > .profileCard > .left > .details > .name {
     font-size: 24px;
     font-weight: bold;
+    color: white;
 }
 
 .profileContainer > .profileCard > .left > .details > .handle {
     font-size: 14px;
     font-weight: lighter;
+    color: white;
+}
+
+.profileContainer > .profileCard > .left > .details > .status {
+    color: wheat;
 }
 
 .profileContainer > .profileCard > .right > .btn > p {
-    background-color: #031d03;
+    background-color: black;
     color: white;
     padding: 10px;
     font-weight: bold;
+}
+
+.profileContainer > .profileCard:hover > .right > .btn > p {
+    background-color: white;
+    color: black;
 }

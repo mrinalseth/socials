@@ -3,13 +3,7 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 const ProfileActions = () => {
-  const styles = {
-    link: {
-      color: "#c3f277",
-      fontSize: "24px",
-      margin: "30px",
-    }
-  }
+  
     return(
         <Container>
             <Link style={{textDecoration:"none"}} to='/edit-profile'>

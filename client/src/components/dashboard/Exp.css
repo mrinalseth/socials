@@ -1,14 +1,3 @@
-
-.container {
-	max-width: 1000px;
-	margin-right:auto;
-	margin-left:auto;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	min-height:100vh;
-}
-
 .table {
 	width:100%;
 	border:1px solid #eeeeee;
@@ -19,7 +8,7 @@
 .table-header {
 	display:flex;
 	width:100%;
-	background:#1b2411;
+	background: rgb(41, 40, 40);
 	padding:18px 0;
 }
 
@@ -30,7 +19,11 @@
 }
 
 .table-row:nth-of-type(odd) {
-	background: #f1fae8;
+	background: #949494;
+}
+
+.table-row:nth-of-type(even) {
+	background: #dddddd;
 }
 
 .table-data, .header__item {
@@ -39,13 +32,21 @@
 }
 
 .table-data > button {
-	background-color: #1b2411;
-	color: #80d43f;
+	background-color: black;
+	color: white;
 	padding: 10px;
 	width: 75%;
 	cursor: pointer;
 	outline: none;
 	border: none;
+	letter-spacing: 2px;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.table-data > button:hover {
+	background-color: rgb(41, 40, 40);
+	color: wheat;
 }
 
 .header__item {
@@ -53,13 +54,13 @@
 }
 
 .filter__link {
-	color: #80d43f;
+	color: wheat;
 	text-decoration: none;
 	position:relative;
 	display:inline-block;
 	padding-left:24px;
 	padding-right:24px;
-	
+	font-weight: 600;
 }
 
 .filter__link::after {

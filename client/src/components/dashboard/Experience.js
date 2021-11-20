@@ -16,10 +16,10 @@ const Experience = (props) => {
             end = new Date(exp.to).toLocaleDateString()
         }
         return(
-            <div class="table-row">		
-				<div class="table-data">{exp.company}</div>
-				<div class="table-data">{exp.title}</div>
-				<div class="table-data">{start} - {end}</div>
+            <div className="table-row">		
+				<div className="table-data">{exp.company}</div>
+				<div className="table-data">{exp.title}</div>
+				<div className="table-data">{start} - {end}</div>
                 <div className="table-data">
                     <button className='btn btn-danger' onClick={() => {
                             handleClick(exp._id)
@@ -31,12 +31,12 @@ const Experience = (props) => {
     })}
     </div>
     return(
-        <div class="table">
-		<div class="table-header">
-			<div class="header__item"><a id="name" class="filter__link" href="#">Company</a></div>
-			<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Title</a></div>
-			<div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Year</a></div>
-			<div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#"></a></div>
+        <div className="table">
+		<div className="table-header">
+			<div className="header__item"><a id="name" className="filter__link" href="#">Company</a></div>
+			<div className="header__item"><a id="wins" className="filter__link filter__link--number" href="#">Title</a></div>
+			<div className="header__item"><a id="draws" className="filter__link filter__link--number" href="#">Year</a></div>
+			<div className="header__item"><a id="draws" className="filter__link filter__link--number" href="#"></a></div>
 		</div>
 		<div class="table-content">	
             {experience}

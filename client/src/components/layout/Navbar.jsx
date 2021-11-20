@@ -9,7 +9,7 @@ function Navbar(){
     Brand: {
       letterSpacing: "12px",
       fontWeight: "650",
-      color: "#80d43f",
+      color: "black",
       textDecoration: "none",
       fontSize: "24px"
     },
@@ -21,8 +21,8 @@ function Navbar(){
       position: "relative",
       whiteSpace: "nowrap",
       textDecoration: "none",
-      color: "#1b5e1c",
-      padding: "25px"
+      color: "black",
+      padding: "25px",
     },
     NavMenuContainer: {
       alignItems: "center",
@@ -75,7 +75,7 @@ function Navbar(){
 }
 const Nav = styled.nav`
     height: 70px;
-    background-color: #f1fae8;
+    background-color: #b4b5b8;
     display: flex;
     justify-content: space-between;
     align-items: center;
