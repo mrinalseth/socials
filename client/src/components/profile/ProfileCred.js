@@ -5,7 +5,7 @@ import './ProfileCred.css'
 
 const ProfileCred = (props) =>{
     return (
-        <div className="container">
+        <div className="credContainer">
             <h3 className="heading">Experience</h3>
                 <div className="exp">
                     <div className="left">

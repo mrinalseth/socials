@@ -1,5 +1,8 @@
 .repoContainer {
     padding: 25px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
     flex-direction: column;
     background: -moz-linear-gradient(45deg,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */

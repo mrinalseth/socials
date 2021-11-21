@@ -7,7 +7,7 @@
     padding: 25px;
     background-size: 50% 100%;
     grid-template-columns: auto auto auto auto;
-    width: 100%;
+    width: 80%;
     background: -moz-linear-gradient(45deg,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(0,0,0,0.9)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(45deg,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
@@ -15,6 +15,8 @@
     background: -ms-linear-gradient(45deg,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
     background: linear-gradient(45deg,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    margin-left: auto;
+    margin-right: auto;
 }
 .card {
     margin: 10px;

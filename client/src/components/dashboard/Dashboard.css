@@ -83,3 +83,28 @@
     letter-spacing: 5px;
     font-weight: 500;
 }
+
+.dashboard__delete {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 25px;
+    flex-direction: column;
+}
+
+.dashboard__delete > .btn {
+    background-color: rgb(41, 40, 40);
+    border-color: rgb(41, 40, 40);
+    color: wheat;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 5px;
+    word-spacing: 15px;
+}
+
+.dashboard__delete > .btn:hover {
+    color: rgb(41, 40, 40);
+    background-color: wheat;
+    border-color: rgb(41, 40, 40);
+
+}

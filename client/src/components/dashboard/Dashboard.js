@@ -85,7 +85,7 @@ function Dashboard()
                         </div>
                     </div>
                     <div className="dashboard__delete">
-                        <button className="btn-danger" onClick={onDelete}>
+                        <button className="btn" onClick={onDelete}>
                             Delete Account
                         </button>
                     </div>
