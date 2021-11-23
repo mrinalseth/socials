@@ -104,7 +104,7 @@
 }
 
 .profile-card > header > .resume > a:hover {
-    background-color: rgb(155, 245, 104);
+    background-color: wheat;
     border-radius: 10px;
     color: black;
     font-weight: bold;

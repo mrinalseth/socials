@@ -14,7 +14,6 @@ import './EditProfile.css'
 const EditProfile = () => {
     const dispatch = useDispatch()
     const {isAuthenticated} = useSelector(state => state.auth)
-    const {profile, loading} = useSelector(state => state.profile)
     let errors = useSelector(state => state.errors)
 
     const [handle,setHandle] = React.useState('')
@@ -119,7 +118,6 @@ const EditProfile = () => {
         return(
           <div className="editProfile">
                 <h1 className="display-4 text-center">Edit Your Profile</h1>
-                <small className="d-block pb-3">* = required field</small>
                 <form action="add-experience.html" onSubmit={onSubmit}>
                   <SelectListGroup
                     errors = {errors.status}

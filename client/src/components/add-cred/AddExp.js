@@ -36,7 +36,6 @@ function AddExp(){
   return(
           <div className="addExp">
             <h1 className="display-4 text-center">Add Your Experience</h1>
-            <p className="lead text-center">Add any developer/programming positions that you have had in the past</p>
             <form action="add-experience" onSubmit={onSubmit}>  
               <TextFieldGroup
                 placeholder='Job Title'
