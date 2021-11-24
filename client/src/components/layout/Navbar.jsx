@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {useDispatch ,useSelector} from 'react-redux'
 import {logUserOut} from '../../actions/authActions'
 import styled from 'styled-components'
+import './Navbar.css'
 function Navbar(){
 
   const styles = {
@@ -61,46 +62,16 @@ function Navbar(){
 
     return(
       <>
-            <Nav>
-                <Logo>
-                  <Link style={styles.Brand} to="/">SOCIAL</Link>
-                </Logo>
-                <NavMenu>
+            <div className="nav">
+                <div className="logo">
+                  <Link style={styles.Brand} to="/"><p>SOCIAL</p></Link>
+                </div>
+                <div className="navMenu">
                 <Link style={styles.NavMenu} to="/profiles"> Developers</Link>
                 {isAuthenticated ? authLinks : guestLinks }
-                </NavMenu>
-            </Nav>
+                </div>
+            </div>
       </>
     )
 }
-const Nav = styled.nav`
-    height: 70px;
-    background-color: #b4b5b8;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 36px;
-    letter-spacing: 16px;
-`;
-
-const Logo = styled.a`
-    Link {
-      letter-spacing: 15px;
-      font-weight: 650;
-      color: #80d43f;
-    }
-`;
-
-const NavMenu = styled.div`
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: flex-end;
-    margin: 0px;
-    padding: 0px;
-    margin-right: auto;
-    margin-left: 25px;
-`;
-
-
 export default Navbar;
