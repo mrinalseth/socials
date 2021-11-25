@@ -19,6 +19,7 @@ function TextFieldGroup(props)
                 'is-invalid':props.errors
             })} 
         placeholder={props.placeholder}
+        type={props.type}
         name={props.name}
         value={props.value}
         disabled={props.disabled}

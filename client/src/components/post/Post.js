@@ -54,7 +54,7 @@ const Post = () => {
                 </div>
             </div>
             <div className="content">
-                <div className="text">{post.text}</div>
+                <div className="_text">{post.text}</div>
                 {mediaData}
             </div>
         </div>

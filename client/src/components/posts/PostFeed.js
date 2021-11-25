@@ -56,7 +56,7 @@ const PostFeed = (props) => {
                             <div className="date">{date.toDateString()}</div>
                         </div>
                     </div>
-                    <div className="text">
+                    <div className="_text">
                         {post.text}
                     </div>
                     <div className="media">{mediaData}</div>
